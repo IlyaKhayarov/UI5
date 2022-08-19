@@ -1,5 +1,10 @@
 <mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.App"
     xmlns= "sap.m"
     xmlns:mvc= "sap.ui.core.mvc">
-    <Text text = "Hello UI5 again!"/>
+    <Panel>
+      <Image src="http://www.sap.com/global/ui/images/global/sap-logo.png"/>
+      <Button text="Press Me!"
+              press=".onShowHello"/>
+    </Panel>
 </mvc:View>
