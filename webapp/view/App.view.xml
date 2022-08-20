@@ -5,6 +5,10 @@
     <Panel>
       <Image src="http://www.sap.com/global/ui/images/global/sap-logo.png"/>
       <Button text="Press Me!"
-              press=".onShowHello"/>
+              press=".onShowHello"/>              
     </Panel>
+    <Input value = "{/recipient/name}"
+           description = "Hello {/recipient/name}"
+           valueUpdateLive = "true"
+           width = "50%"/>
 </mvc:View>
