@@ -4,11 +4,11 @@
     xmlns:mvc= "sap.ui.core.mvc">
     <Panel>
       <Image src="http://www.sap.com/global/ui/images/global/sap-logo.png"/>
-      <Button text="Press Me!"
+      <Button text="{i18n>showHelloButtonText}"
               press=".onShowHello"/>              
     </Panel>
     <Input value = "{/recipient/name}"
-           description = "Hello {/recipient/name}"
+           description = "Hello from view.xml {/recipient/name}"
            valueUpdateLive = "true"
            width = "50%"/>
 </mvc:View>
