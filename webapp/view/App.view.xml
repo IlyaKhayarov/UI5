@@ -3,8 +3,9 @@
     xmlns= "sap.m"
     xmlns:mvc= "sap.ui.core.mvc"
     displayBlock="true">
+    <Shell>
     <App>
-      <pages>
+      <pages>  
         <Page title="{i18n>homePageTitle}">
           <Image src="http://www.sap.com/global/ui/images/global/sap-logo.png"/>
           <content>
@@ -21,6 +22,5 @@
         </Page>
       </pages>
     </App>
-    
-    
+    </Shell>
 </mvc:View>
