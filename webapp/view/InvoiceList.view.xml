@@ -9,7 +9,7 @@ controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
         items="{invoice>/Invoices}">
         <items>
             <ObjectListItem 
-                title="{invoice>Quantity} x {invoice>ProductName}"
+                title="{invoice>Quantity} x {invoice>ProductName} x {invoice>Status}"
                 number="{
                     parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view:/currency'}],
                     type: 'sap.ui.model.type.Currency',
@@ -18,7 +18,14 @@ controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
                     }
                 }"
                 numberUnit="{view>/currency}"
-                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}"/>
+                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}">
+                <firstStatus>
+                    <ObjectStatus text="{
+                        path: 'invoice>Status',
+                        formatter: '.formatter.statusText'
+                    }"/>
+                </firstStatus>    
+            </ObjectListItem>    
         </items>    
     </List>
 </mvc:View>    
