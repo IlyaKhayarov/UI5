@@ -18,16 +18,20 @@ sap.ui.define([
             if (!this.pDialog) {
                 this.pDialog = this.loadFragment({
                     name: "sap.ui.demo.walkthrough.view.HelloDialog"
-                });
+                }).then(function (oDialog) {
+                    // forward compact/cozy style into dialog
+                    syncStyleClass(this.getOwnerComponent().getContentDensityClass(), this.getView(), oDialog);
+                    return oDialog;
+                }.bind(this));
             }
             this.pDialog.then(function (oDialog) {
                 oDialog.open();
             });
         },
-        onCloseDialog: function() {
+        onCloseDialog: function () {
             // note: We don't need to chain to the pDialog promise, since this event-handler
-			// is only called from within the loaded dialog itself.
+            // is only called from within the loaded dialog itself.
             this.byId("helloDialog").close();
-        } 
+        }
     });
 });
